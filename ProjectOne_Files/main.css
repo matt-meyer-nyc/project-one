@@ -98,13 +98,13 @@ img[src="/Users/Matt/Downloads/HillaryPixel2.png"] {
   height: 100%;
   width: 100%;
   position: absolute;
+  bottom: 600px;
 }
 
 .bernie {
   height:100px;
   width:100px;
   position: relative;
-
   top:150px;
 }
 
@@ -112,7 +112,8 @@ img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
   height: 100%;
   width: 100%;
   position: absolute;
-  right: 6px;
+  left: 780px;
+  bottom: 705px;
 }
 
 .donkey {

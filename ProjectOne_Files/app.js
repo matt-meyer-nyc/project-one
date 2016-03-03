@@ -61,25 +61,31 @@ window.onload = function () {
   //    donkey.tick();
   //  }
   // }
-var hillImg = document.querySelector(".hillaryimg")
-var hillBottom = 0;
-var bernImg = document.querySelector(".bernieimg")
-var bernBottom = 0;
+
+
+
+
+  // CITATION: BELOW CODE BASED OFF - How to move a character on a screen with Javascript (https://www.youtube.com/watch?v=vbnjxXCq5HQ)
+var hillImg = document.querySelector(".hillaryimg");
+var hillBottom = 600;
+var bernImg = document.querySelector(".bernieimg");
+var bernBottom = 705;
 
 function anim (e) {
-  if (e.keyCode == 81) {
-    hillBottom += 2;
+  if (e.keyCode == 87) {
+    hillBottom += 30;
     hillImg.style.bottom = hillBottom + "px";
   }
   if (e.keyCode == 90) {
-    hillBottom -= 2;
+    hillBottom -= 30;
     hillImg.style.bottom = hillBottom + "px";
-  } if (e.keyCode == 38) {
-    bernBottom += 2;
+
+  } if (e.keyCode == 73) {
+    bernBottom += 30;
     bernImg.style.bottom = bernBottom + "px";
   }
-  if (e.keyCode == 40) {
-    hillBottom -= 2;
+  if (e.keyCode == 77) {
+    bernBottom -= 30;
     bernImg.style.bottom = bernBottom + "px";
   }
 
