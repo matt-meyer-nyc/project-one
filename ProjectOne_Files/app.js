@@ -2,51 +2,93 @@ window.onload = function () {
   console.log("page loaded");
 
 
-var hillary = document.querySelector('#hillary');
-var bernie = document.querySelector('.bernie');
-var donkey = document.querySelector('.donkey');
-var navbar = document.querySelector('#navbar')
+  var bernie = {
+    y: 50,
+    el: document.querySelector('.bernie')/*,
+    redraw: function () {
 
-var singlePlayer = document.querySelector('.singleplayer');
+     },
+     update: function () {
 
-var singlePlayerH3 = document.createElement('h3');
+    } */
+  };
 
-// singlePlayerH3.innerText = "Single Player Mode";
-// singlePlayer.appendChild(singlePlayerH3);
-// navbar.appendCHild(singlePlayer)
-// document.body.appendChild(navbar)
-//     WHY WON'T THIS PUPPY ABOVE WORK?
+  var hillary = {
+    y: 50,
+    el: document.querySelector('#hillary')/*,
+    redraw: function () {
+
+     },
+     update: function () {
+
+    } */
+  };
+
+  var donkey = {
+   x: 50,
+   y: 50,
+   el: document.querySelector('donkey'),
+   tick: function () {
+     // update current x + y values
+   },
+   redraw: function () {
+     // update this.el to reflect new x + y values
+   },
+   update: function () {
+     this.tick();
+     this.checkForCollision();
+     this.redraw();
+   },
+   checkForCollision: function () {
+     if (this.x >= bernie.x) {
+
+     } else if (this.x <= hillary.x) {
+
+     } else {
+
+     }
+   },
+   players: [
+     bernie,
+     hillary
+   ]
+  }
+
+  // game = {
+  //  tick: function () {
+  //    hillary.tick();
+  //    bernie.tick();
+  //    donkey.tick();
+  //  }
+  // }
+var hillImg = document.querySelector(".hillaryimg")
+var hillBottom = 0;
+var bernImg = document.querySelector(".bernieimg")
+var bernBottom = 0;
+
+function anim (e) {
+  if (e.keyCode == 81) {
+    hillBottom += 2;
+    hillImg.style.bottom = hillBottom + "px";
+  }
+  if (e.keyCode == 90) {
+    hillBottom -= 2;
+    hillImg.style.bottom = hillBottom + "px";
+  } if (e.keyCode == 38) {
+    bernBottom += 2;
+    bernImg.style.bottom = bernBottom + "px";
+  }
+  if (e.keyCode == 40) {
+    hillBottom -= 2;
+    bernImg.style.bottom = bernBottom + "px";
+  }
+
+  }
+
+document.onkeydown = anim;
 
 
-
-
-// ***********************************************************
-// SOURCE FOR THE SKELETON OF THIS CODE - http://forums.tumult.com/t/move-an-element-or-div-with-arrow-keys/2514
-
-
-hillary.style.top = 0;
-hillary.style.left = 0;
-
-document.body.onkeyup = function() {
-var e = event.keyCode,
-   charTop = parseInt(document.getElementById("hillary").style.top),
-   charLeft = parseInt(document.getElementById("hillary").style.left);
-
-   if (e == 40) { //down function
-       document.getElementById("hillary").style.top = (parseInt(document.getElementById("hillary").style.top)) + 10 + "px";
-   } else if (e == 37) { //left function
-       document.getElementById("hillary").style.left = (parseInt(document.getElementById("hillary").style.left)) - 10 + "px";
-   } else if (e == 39) { //right function
-       document.getElementById("hillary").style.left = (parseInt(document.getElementById("hillary").style.left)) + 10 + "px";
-   } else if (e == 38) { //up function
-       document.getElementById("hillary").style.top = (parseInt(document.getElementById("hillary").style.top)) - 10 + "px";
-   }
-
-}
-
-// ***************************************************************
-
-
+// }
 
 
 

@@ -89,7 +89,7 @@ font-family: 'Press Start 2P', cursive;
 #hillary {
   height: 100px;
   width: 100px;
-  position: absolute;
+  position: relative;
   top: 150px;
 
 }
@@ -97,19 +97,22 @@ font-family: 'Press Start 2P', cursive;
 img[src="/Users/Matt/Downloads/HillaryPixel2.png"] {
   height: 100%;
   width: 100%;
+  position: absolute;
 }
 
 .bernie {
   height:100px;
   width:100px;
-  position: absolute;
-  right: 6px;
+  position: relative;
+
   top:150px;
 }
 
 img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
   height: 100%;
   width: 100%;
+  position: absolute;
+  right: 6px;
 }
 
 .donkey {
