@@ -1,12 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+
 .body {
   position: relative;
-
 }
 
 
 .container {
   border: 1px dotted black;
-
+  background-color: #444444;
   width: 1200px;
   height: 650px;
   display: inline-block;
@@ -15,14 +17,37 @@
      transform: translateX(-50%);
 }
 
-#gamescreen {
+h3 {
+text-align: center;
+font-family: 'Press Start 2P', cursive;
+}
+
+.vs {
+  position: absolute;
+  bottom: 240px;
+  left: 84px;
+}
+
+.singleplayer > input {
+  position: absolute;
+  left: 84px;
+}
+
+
+
+
+
+
+
+/*#gamescreen {
   border: 2px solid blue;
   height: 635px;
   width: 878px;
   margin: 3px 3px 3px 3px;
   padding: 3px 3px 3px 3px;
   position:absolute;
-}
+  background-color: black;
+}*/
 
 
 #navbar {
@@ -36,7 +61,7 @@
 }
 
 #gamescreen {
-  background-color: black; /*whit is background only effecting border?*/
+  background-color: black; /*why is background only effecting border?*/
   height: 632px;
   width: 878px;
   margin: 3px 3px 3px 3px;
@@ -44,7 +69,6 @@
   position: absolute;
   top: 1px;
   right: 1px
-
 }
 
 .mainscreen {
@@ -62,7 +86,7 @@
   opacity: 90%;
 }
 
-.hillary {
+#hillary {
   height: 100px;
   width: 100px;
   position: absolute;
