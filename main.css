@@ -79,6 +79,7 @@ img[src="WhiteHousePixelated2.png"] {
   img[src="donkey.png"] {
     height: 100%%;
     width: 100%;
+    transform: scaleX(-1);
   }
 
 
@@ -86,7 +87,7 @@ img[src="WhiteHousePixelated2.png"] {
     position: absolute;
     height: 100px;
     width: 100px;
-    transform: scaleX(-1);
+   
 
     /*background-image: url("BerniePixel2.png");*/
   }
