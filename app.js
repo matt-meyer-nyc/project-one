@@ -234,7 +234,7 @@ function timerTick() {
         ball.xspeed *= -1;
         // gameOver();
         bernieScore +=1
-        document.getElementById('bernScore').innerHTML = "BERNIE's SCORE: " + <br/> + bernieScore;
+        document.getElementById('bernScore').innerHTML = "BERNIE's SCORE: " + "\n" + bernieScore;
 
     }
 
