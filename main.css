@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+
+#navbar {
+  border: 2px solid black;
+  height: 643px;
+  margin: 1px 1px 1px 1px; /*why is bottom margin not effected?*/
+  width: 300px;
+  background: linear-gradient(red, white, blue);
+  position: reative;
+   top: 1px;
+ }
+
+
+
+.container {
+  position: absolute;
+  left: 35px;
+  height: 649px;
+  width: 1180px;
+/*//Citation: http://www.hongkiat.com/blog/css-gradient-border/*/
+  border: 20px solid transparent;
+    border-image: linear-gradient(to bottom, #0000ff 0%, #ff0000 100%);
+    border-image-slice: 1;
+}
+
+
+
+h3 {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+}
+
+#hillScore {
+  position: absolute;
+  height: 48px;
+  width: 150px;
+  left: 75px;
+  top:150px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 4px solid blue;
+}
+
+#bernScore {
+  position: absolute;
+  height: 48px;
+  width: 150px;
+  left: 75px;
+  top:300px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 4px solid blue;
+}
+
+
+#playingField {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background-color: black;
+    border: 2px solid black;
+}
+
+img[src="/Users/Matt/Downloads/WhiteHousePixelated2.png"] {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+}
+
+#ball {
+    position: absolute;
+  }
+
+  img[src="/Users/Matt/Desktop/Project-One-Stuff/donkey.png"] {
+    height: 100%%;
+    width: 100%;
+  }
+
+
+#paddle {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+
+    /*background-image: url("BerniePixel2.png");*/
+  }
+
+img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
+  height: 100px;;
+  width: 100px;
+  position: absolute;
+  right: -76px;
+  bottom:0.5px;
+
+}
+
+#hPaddle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+
+}
+
+
+img[src="/Users/Matt/Downloads/HillaryPixel2.png"] {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: -80px;
+  bottom: 1px;
+
+}
+
+#instructions {
+
+    /*position: absolute;
+    left: -220px;*/
+    position: absolute;;
+    top: 200px;
+    left: 256px;
+    color: blue;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 600;
+    font-weight: bolder;
+
+
+
+}
