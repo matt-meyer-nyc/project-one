@@ -20,9 +20,7 @@
   width: 1180px;
 /*//Citation: http://www.hongkiat.com/blog/css-gradient-border/*/
   border: 20px solid transparent;
-    -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
-    -webkit-border-image: -webkit-linear-gradient(top, #ff0000 0%, #0000ff 100%);
-    border-image: linear-gradient(to bottom, #ff0000 0%, #0000ff 100%);
+    border-image: linear-gradient(to bottom, #0000ff 0%, #ff0000 100%);
     border-image-slice: 1;
 }
 
@@ -31,6 +29,32 @@
 h3 {
   text-align: center;
   font-family: 'Press Start 2P', cursive;
+}
+
+#hillScore {
+  position: absolute;
+  height: 48px;
+  width: 150px;
+  left: 75px;
+  top:150px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 4px solid blue;
+}
+
+#bernScore {
+  position: absolute;
+  height: 48px;
+  width: 150px;
+  left: 75px;
+  top:300px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 4px solid blue;
 }
 
 
@@ -62,6 +86,7 @@ img[src="/Users/Matt/Downloads/WhiteHousePixelated2.png"] {
     position: absolute;
     height: 100px;
     width: 100px;
+
     /*background-image: url("BerniePixel2.png");*/
   }
 
@@ -70,6 +95,7 @@ img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
   width: 100px;
   position: absolute;
   right: -76px;
+  bottom:0.5px;
 
 }
 
@@ -77,21 +103,18 @@ img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
   position: absolute;
   width: 100px;
   height: 100px;
-  right: 500;
+
 }
 
 
 img[src="/Users/Matt/Downloads/HillaryPixel2.png"] {
-  height: 100%;
-  width: 100%;
+  height: 100px;
+  width: 100px;
   position: absolute;
-  z-inex: 999;
+  left: -80px;
+  bottom: 1px;
+
 }
-
-
-
-
-
 
 #instructions {
 
@@ -99,19 +122,12 @@ img[src="/Users/Matt/Downloads/HillaryPixel2.png"] {
     left: -220px;*/
     position: absolute;;
     top: 200px;
-    left: -220px;
-    background-color: white;
-    border : 2px solid red;
-    border-radius: 5px;
-    width: 15%;
-}
-#scorePanel {
-    position: absolute;
-    top: 400px;
-    left: -250px;
-    width: 200px;
-    height: 20px;
-    background-color: white;
-    border: 1px solid red;
-    border-radius: 4px;
+    left: 256px;
+    color: blue;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 600;
+    font-weight: bolder;
+
+
+
 }

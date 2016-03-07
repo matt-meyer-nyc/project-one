@@ -1,39 +1,48 @@
 window.onload = function () {
 
-var fieldWidth = 878;      // how wide is the playing field
-var fieldHeight = 643;     // how tall is the playing field
-var fieldColor = document.querySelector('.whitehouse'); // what color is the playing field
 
-var paddleWidth = 10;      // how wide is the paddle
-var paddleHeight = 80;     // how tall is the paddle
-var paddleColor = 0x00ff00;// what color is the paddle
-var paddleSpeed = 6;      // how fast will the paddle move
-var paddleXPos = fieldWidth - Math.floor(fieldWidth / 10); // 10% from right
-var paddleYPos = Math.floor((fieldHeight - paddleHeight)/2); // middle
 
-var paddleWidthHill = 10;      // how wide is the paddle
-var paddleHeightHill = 80;     // how tall is the paddle
-var paddleColorHill = 0x00ff00;// what color is the paddle
-var paddleSpeedHill = 6;      // how fast will the paddle move
-var paddleXPosHill = fieldWidth - Math.floor(fieldWidth / 10); // 10% from right
-var paddleYPosHill = Math.floor((fieldHeight - paddleHeight)/2); // middle
+var hillaryScore = 0;
+var bernieScore = 0;
 
-var ballSize = 40;         // how big is the ball
-var ballXPos = Math.floor(fieldWidth / 10); // start 10% from left
-var ballYPos = Math.floor((fieldHeight - ballSize) / 2); // middle
-var ballXSpeed = Math.floor(Math.random() * 3) + 1;        // what is the initial velocity of the ball
+
+
+
+//!! CITATION: Skeleton for Program borrowed from: http://jsfiddle.net/scooter/syDZ9/  !!
+
+//display - game consel
+var fieldWidth = 878;
+var fieldHeight = 643;
+var fieldColor = document.querySelector('.whitehouse');
+
+//Bernie's 'paddl' details
+var paddleWidth = 0.1;   //my own cheat to make it appear there's not paddle
+var paddleHeight = 80;
+var paddleColor = 0x00ff00;
+var paddleSpeed = 6;
+var paddleXPos = fieldWidth - Math.floor(fieldWidth / 10);
+var paddleYPos = Math.floor((fieldHeight - paddleHeight)/2);
+
+//hillary's 'paddle' details
+var paddleWidthHill = 0.1;
+var paddleHeightHill = 80;
+var paddleColorHill = 0x00ff00;
+var paddleSpeedHill = 6;
+var paddleXPosHill = fieldWidth - (fieldWidth / 1.1);
+var paddleYPosHill = Math.floor((fieldHeight - paddleHeight)/2);
+
+//details about the 'ball' aka donkey
+var ballSize = 40;
+var ballXPos = (fieldWidth / 2.1);
+var ballYPos = Math.floor((fieldHeight - ballSize) / 2);
+var ballXSpeed = Math.floor(Math.random() * 3) + 1;
 var ballYSpeed = 2;
-var ballColor = document.querySelector("#ball");  // what color is the ball
+var ballColor = document.querySelector("#ball");
 
-var keyState = 0;          // current state of arrow keys
-var intTimeHandle =0;         // pointer to the interval timer
+var keyState = 0;
+var intTimeHandle =0;
 
-// Debug output
-// you can send debug print message to the screen using this function
-// this is helpful if you are not getting the results that you expect
-function output(message) {
-    document.getElementById("output").innerHTML += message + "<br/>\n";
-}
+
 
 
 
@@ -49,7 +58,7 @@ function setColor(newColor) {
     this.obj.style.backgroundColor = "#" + newColor.substr(newColor.length - 6);
 }
 
-// Playing field object
+
 function PlayingField(width, height, color) {
     this.width = width;
     this.height = height;
@@ -59,8 +68,7 @@ function PlayingField(width, height, color) {
     this.setColor = setColor;
     this.setColor(color);
     this.obj.onclick = function() {
-        // start the game when the field is clicked
-        // setup the timer tick event handler
+
         document.getElementById('instructions').style.display = 'none';
         if (intTimeHandle === 0) {
             intTimeHandle = setInterval(function(){timerTick();},10);
@@ -68,7 +76,7 @@ function PlayingField(width, height, color) {
     };
 }
 
-// Paddle object
+
 function Paddle(width, height, color, speed, xpos, ypos) {
     this.width = width;
     this.height = height;
@@ -77,26 +85,45 @@ function Paddle(width, height, color, speed, xpos, ypos) {
     this.obj.style.width = width.toString() + "px";
     this.obj.style.height = height.toString() + "px";
 
-    // you can use this method to change the color of the paddle
+
     this.setColor = setColor;
     this.setColor(color);
 
-    // you can use this method to change the location of the paddle
+
+    this.setPosition = setPosition;
+    this.setPosition(xpos,ypos);
+}
+////////////////////////////////////////////////
+function hPaddle(width, height, color, speed, xpos, ypos) {
+    this.width = width;
+    this.height = height;
+    this.speed = speed;
+    this.obj = document.getElementById("hPaddle");
+    this.obj.style.width = width.toString() + "px";
+    this.obj.style.height = height.toString() + "px";
+
+
+    this.setColor = setColor;
+    this.setColor(color);
+
+
     this.setPosition = setPosition;
     this.setPosition(xpos,ypos);
 }
 
-// Ball object
+//////////////////////////////////////////////
+
+
 function Ball(size, xpos, ypos, xspeed, yspeed, color) {
     this.xspeed = xspeed;
     this.yspeed = yspeed;
 
     this.obj = document.getElementById("ball");
 
-    // you can use this method to update the ball's location
+
     this.setPosition = setPosition;
 
-    // you can use this method to change the size of the ball
+
     this.setSize = setSize;
     function setSize(size) {
         this.size = size;
@@ -114,29 +141,29 @@ function Ball(size, xpos, ypos, xspeed, yspeed, color) {
     this.setColor(color);
 }
 
-// instantiate a field object - this is the background object
+
 var field = new PlayingField(fieldWidth, fieldHeight, fieldColor);
 
-// instantiate a paddle object - this is what the player controls
+
 var paddle = new Paddle(paddleWidth, paddleHeight, paddleColor, paddleSpeed, paddleXPos, paddleYPos);
 
-// instantiate a ball object - the bouncing ball
+////////////////////////////////////////////////////////////////////////////////////
+var hpaddle = new hPaddle(paddleWidthHill, paddleHeightHill, paddleColorHill, paddleSpeedHill, paddleXPosHill, paddleYPosHill)
+/////////////////////////////////////////////////////////////////////////////
+
+
 var ball = new Ball(ballSize, ballXPos, ballYPos, ballXSpeed, ballYSpeed, ballColor);
 
-// The following functions track the arrow keys when they are pressed
-// pressing the up arrow key will cause keyState to be -1
-// (negative is the up direction)
-// pressing the down arrow key will cause keyState to be 1
-// (positive is the down direction)
-// releasing either key will cause keyState to be 0
-// (no direction - stop the motion of the paddle)
+
+
+
 document.onkeydown = function (e) {
     var evt = e || window.event;
     if (evt.keyCode == 38) {
-        // up arrow
+
         keyState = -1;
     } else if (evt.keyCode == 40) {
-        // down arrow
+
         keyState = 1;
     }
     return false;
@@ -150,7 +177,27 @@ document.onkeyup = function (e) {
     return false;
 };
 ////////////////////////////////////////////////////
+//I'm stuck here at how to connect this to  the specific div to make Hillary move (Sunday: 11:14pm)
 
+// document.onkeydown = function (e) {
+//     var evt = e || window.event;
+//     if (evt.keyCode == 87 && document.querySelector('#hPaddle')) {
+//       //'w' key
+//         keyState = -1;
+//     } else if (evt.keyCode == 90) {
+//     //'z'
+//         keyState = 1;
+//     }
+//     return false;
+// };
+//
+// document.onkeyup = function (e) {
+//     var evt = e || window.event;
+//     if (evt.keyCode == 38 || evt.keyCode == 40) {
+//         keyState = 0;
+//     }
+//     return false;
+// };
 //////////////////////////////////////////////////////
 
 
@@ -159,22 +206,20 @@ document.onkeyup = function (e) {
 
 //////////////////////////////////////////////////////
 
-// This function should be called when the ball contacts the right wall
-// of the field. This should only happen when the player fails to contact
-// the ball with the paddle.
+
 function gameOver() {
     clearInterval(intTimeHandle);
     document.getElementById('instructions').innerHTML = "Game Over";
     document.getElementById('instructions').style.display = "block";
-    field.setColor(0x033003);
+    field.setColor(0xff0000);
+
+
+
 }
 
-// create a timer call back function
-// this is a list of things that need to be done every time the timer ticks
-function timerTick() {
-    // ******************** put your code here ***************************
 
-    // Adjust the ball position
+function timerTick() {
+
     var currx = ball.xpos;
     var curry = ball.ypos;
     var prevx = ball.xpos;
@@ -186,18 +231,32 @@ function timerTick() {
     // look for hit on left wall
     if (currx < 0) {
         currx = 0;
-        ball.xspeed *= -1;
+        // ball.xspeed *= -1;
+        gameOver();
+        bernieScore +=1
+        document.getElementById('bernScore').innerHTML = "BERNIE's SCORE: " + bernieScore;
+
     }
-    // look for hit on top wall
+
     if (curry < 0) {
         curry = 0;
         ball.yspeed *= -1;
     }
-    // look for hit on right wall
+
     if (currx > (field.width - ball.size)) {
         currx = (field.width - ball.size);
         //ball.xspeed *= -1;
         gameOver();
+        hillaryScore +=1
+        document.getElementById('hillScore').innerHTML = "HILLARY's SCORE: " + hillaryScore;
+/////////////////////////////////////////////////////////////
+        var resetButton = document.getElementbyId('instructions');
+        Playingfield.onclick= reloadPage;
+                                    //   <-----
+        function reloadPage(){            //Stuck getting page to reload after game over to start game
+        window.location.reload();         //  w/o having to refresh page; tried this, really confused,
+}                                         //   because now getting rid of it messes up display of console
+///////////////////////////////////////////////////////////////////////
     }
     // look for hit on bottom wall
     if (curry > (field.height - ball.size)) {
@@ -205,7 +264,17 @@ function timerTick() {
         ball.yspeed *= -1;
     }
 
-    // check for ball contacting paddle
+    /////////////////////////////////////////////////////////
+   ////below...did ball contact paddle (check to see)
+    if ((prevx <= (hpaddle.xpos - ball.size)) && (currx > (hpaddle.xpos - ball.size))) {
+        if ((curry > (hpaddle.ypos - Math.floor(ball.size/2))) && (curry < hpaddle.ypos + hpaddle.height - Math.floor(ball.size/2))) {
+            ball.xspeed *= -1.1;
+        }
+    }
+    ball.setPosition(currx,curry);
+
+
+
     if ((prevx <= (paddle.xpos - ball.size)) && (currx > (paddle.xpos - ball.size))) {
         if ((curry > (paddle.ypos - Math.floor(ball.size/2))) && (curry < paddle.ypos + paddle.height - Math.floor(ball.size/2))) {
             ball.xspeed *= -1.1;
@@ -213,7 +282,8 @@ function timerTick() {
     }
     ball.setPosition(currx,curry);
 
-    // Adjust the paddle position
+
+
     var pady = paddle.ypos;
     pady = pady + (paddle.speed * keyState);
     if (pady < 0) {
@@ -225,9 +295,30 @@ function timerTick() {
         keyState = 0;
     }
     paddle.setPosition(paddle.xpos, pady);
+
+
+var hpady = hpaddle.ypos;
+hpady = hpady + (hpaddle.speed * keyState);
+if (phady < 0) {
+    hpady = 0;
+    keyState = 0;
+}
+if (hpady > (field.height - hpaddle.height)) {
+    hpady = field.height - hpaddle.height;
+    keyState = 0;
+}
+hpaddle.setPosition(hpaddle.xpos, hpady);
 }
 
 
-};
 
-//END PROGRAM
+};//END PROGRAM
+
+
+//
+// Sunday: 11:40pm:
+//
+// 2 major flaws:
+//
+// 1 - can't get Hillary to move
+// 2 - can't get game to restart without refreshing page (i.e. continuous game loop, so can do that and also keep score)
