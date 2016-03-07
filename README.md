@@ -17,7 +17,7 @@ This came up with Shorty, but I opted to leave out a normalize function, so as t
 
 The loop I got thrown for was this. Every time I tried to add in the 'Snuggles' code I had working to move the 'paddles' the entire layout fo the screen got turned about.
 
-The code I sited used this for paddle movement:
+The code I cited used this for paddle movement:
 
 `document.onkeydown = function (e) {
     var evt = e || window.event;
@@ -43,6 +43,6 @@ I'm a still confused about why this moves the Bernie 'paddle' and not any other 
 
 I wrote in the ability to keep track of the score each time the ball hit the other players wall, and have it expressed on the left navbar. I also used Google fonts to make the font-style look like a retro arcade.
 
-I'm looking forward to making up the other 10% I need to fix this, and having it be part of my portfolio.
+I'm looking forward to making up the other 10% I need to fix this, adding a few other bells/whisteles (like having the donkey flip back and forth when changign x-axis direction, and sound effects) and having it be part of my portfolio.
 
 
