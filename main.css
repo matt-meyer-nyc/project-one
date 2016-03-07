@@ -76,7 +76,7 @@ img[src="/Users/Matt/Downloads/WhiteHousePixelated2.png"] {
     position: absolute;
   }
 
-  img[src="/Users/Matt/Desktop/Project-One-Stuff/donkey.png"] {
+  img[src="donkey.png"] {
     height: 100%%;
     width: 100%;
   }
@@ -91,7 +91,7 @@ img[src="/Users/Matt/Downloads/WhiteHousePixelated2.png"] {
     /*background-image: url("BerniePixel2.png");*/
   }
 
-img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
+img[src="BerniePixel2.png"] {
   height: 100px;;
   width: 100px;
   position: absolute;
@@ -108,7 +108,7 @@ img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
 }
 
 
-img[src="/Users/Matt/Downloads/HillaryPixel2.png"] {
+img[src="HillaryPixel2.png"] {
   height: 100px;
   width: 100px;
   position: absolute;
