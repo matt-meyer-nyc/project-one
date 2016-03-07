@@ -234,7 +234,7 @@ function timerTick() {
         ball.xspeed *= -1;
         // gameOver();
         bernieScore +=1
-        document.getElementById('bernScore').innerHTML = "BERNIE: " + bernieScore;
+        document.getElementById('bernScore').innerHTML = "BERNIE's SCORE: " + bernieScore;
 
     }
 
@@ -248,7 +248,7 @@ function timerTick() {
         //ball.xspeed *= -1;
         gameOver();
         hillaryScore +=1
-        document.getElementById('hillScore').innerHTML = "HILLARY: " + hillaryScore;
+        document.getElementById('hillScore').innerHTML = "HILLARY's SCORE: " + hillaryScore;
 /////////////////////////////////////////////////////////////
         var resetButton = document.getElementbyId('instructions');
         Playingfield.onclick= reloadPage;
