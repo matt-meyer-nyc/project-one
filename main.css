@@ -86,6 +86,7 @@ img[src="/Users/Matt/Downloads/WhiteHousePixelated2.png"] {
     position: absolute;
     height: 100px;
     width: 100px;
+    transform: scaleX(-1);
 
     /*background-image: url("BerniePixel2.png");*/
   }
