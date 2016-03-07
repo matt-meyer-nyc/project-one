@@ -1,130 +1,117 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 
 
-.body {
-  position: relative;
-}
-
-
-.container {
-  border: 1px dotted black;
-  background-color: #444444;
-  width: 1200px;
-  height: 650px;
-  display: inline-block;
-  position: absolute;
-     left: 50%;
-     transform: translateX(-50%);
-}
-
-h3 {
-text-align: center;
-font-family: 'Press Start 2P', cursive;
-}
-
-.vs {
-  position: absolute;
-  bottom: 240px;
-  left: 84px;
-}
-
-.singleplayer > input {
-  position: absolute;
-  left: 84px;
-}
-
-
-
-
-
-
-
-/*#gamescreen {
-  border: 2px solid blue;
-  height: 635px;
-  width: 878px;
-  margin: 3px 3px 3px 3px;
-  padding: 3px 3px 3px 3px;
-  position:absolute;
-  background-color: black;
-}*/
-
-
 #navbar {
-  border: 2px solid black;;
+  border: 2px solid black;
   height: 643px;
   margin: 1px 1px 1px 1px; /*why is bottom margin not effected?*/
   width: 300px;
   background: linear-gradient(red, white, blue);
-  position: absolute;
+  position: reative;
    top: 1px;
-}
+ }
 
-#gamescreen {
-  background-color: black; /*why is background only effecting border?*/
-  height: 632px;
-  width: 878px;
-  margin: 3px 3px 3px 3px;
-  padding: 3px 3px 3px 3px;
+
+
+.container {
   position: absolute;
-  top: 1px;
-  right: 1px
+  left: 35px;
+  height: 649px;
+  width: 1180px;
+/*//Citation: http://www.hongkiat.com/blog/css-gradient-border/*/
+  border: 20px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #ff0000 0%, #0000ff 100%);
+    border-image: linear-gradient(to bottom, #ff0000 0%, #0000ff 100%);
+    border-image-slice: 1;
 }
 
-.mainscreen {
-  height: 632px;
-  width: 878px;
-  background: black;
-  z-index: 999;
+
+
+h3 {
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
 }
 
-.whitehouse {
-  position: absolute:
-  bottom: 100px;
-  height: 100%;
-  width: 100%;
-  opacity: 90%;
+
+#playingField {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background-color: black;
+    border: 2px solid black;
 }
 
-#hillary {
-  height: 100px;
+img[src="/Users/Matt/Downloads/WhiteHousePixelated2.png"] {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+}
+
+#ball {
+    position: absolute;
+  }
+
+  img[src="/Users/Matt/Desktop/Project-One-Stuff/donkey.png"] {
+    height: 100%%;
+    width: 100%;
+  }
+
+
+#paddle {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    /*background-image: url("BerniePixel2.png");*/
+  }
+
+img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
+  height: 100px;;
   width: 100px;
-  position: relative;
-  top: 150px;
+  position: absolute;
+  right: -76px;
 
 }
+
+#hPaddle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: 500;
+}
+
 
 img[src="/Users/Matt/Downloads/HillaryPixel2.png"] {
   height: 100%;
   width: 100%;
   position: absolute;
-  bottom: 600px;
+  z-inex: 999;
 }
 
-.bernie {
-  height:100px;
-  width:100px;
-  position: relative;
-  top:150px;
-}
 
-img[src="/Users/Matt/Downloads/BerniePixel2.png"] {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 780px;
-  bottom: 705px;
-}
 
-.donkey {
-height: 60px;
-width: 60px;
-position: absolute;
-top: 200px;
-right: 200px;
-}
 
-img[src="/Users/Matt/Desktop/Project-One-Stuff/donkey.png"] {
-  height: 100%%;
-  width: 100%;
+
+
+#instructions {
+
+    /*position: absolute;
+    left: -220px;*/
+    position: absolute;;
+    top: 200px;
+    left: -220px;
+    background-color: white;
+    border : 2px solid red;
+    border-radius: 5px;
+    width: 15%;
+}
+#scorePanel {
+    position: absolute;
+    top: 400px;
+    left: -250px;
+    width: 200px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 4px;
 }
