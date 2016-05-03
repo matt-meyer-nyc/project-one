@@ -181,7 +181,7 @@ document.onkeyup = function (e) {
 
 document.onkeydown = function (e) {
     var evt = e || window.event;
-    if (evt.keyCode == 87 && document.querySelector('#hPaddle')) {
+    if (evt.keyCode == 87) {
       //'w' key
         keyState = -1;
     } else if (evt.keyCode == 90) {
