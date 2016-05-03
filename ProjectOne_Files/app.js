@@ -179,8 +179,8 @@ document.onkeyup = function (e) {
 ////////////////////////////////////////////////////
 //I'm stuck here at how to connect this to  the specific div to make Hillary move (Sunday: 11:14pm)
 
-document.onkeydown = function (e) {
-    var evt = e || window.event;
+document.onkeydown = function (f) {
+    var evt = f || window.event;
     if (evt.keyCode == 87) {
       //'w' key
         keyState = -1;
@@ -191,7 +191,7 @@ document.onkeydown = function (e) {
     return false;
 };
 
-document.onkeyup = function (e) {
+document.onkeyup = function (f) {
     var evt = e || window.event;
     if (evt.keyCode == 87 || evt.keyCode == 90) {
         keyState = 0;
@@ -200,11 +200,6 @@ document.onkeyup = function (e) {
 };
 //////////////////////////////////////////////////////
 
-
-
-
-
-//////////////////////////////////////////////////////
 
 
 function gameOver() {
