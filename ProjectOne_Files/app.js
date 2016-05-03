@@ -179,25 +179,25 @@ document.onkeyup = function (e) {
 ////////////////////////////////////////////////////
 //I'm stuck here at how to connect this to  the specific div to make Hillary move (Sunday: 11:14pm)
 
-// document.onkeydown = function (e) {
-//     var evt = e || window.event;
-//     if (evt.keyCode == 87 && document.querySelector('#hPaddle')) {
-//       //'w' key
-//         keyState = -1;
-//     } else if (evt.keyCode == 90) {
-//     //'z'
-//         keyState = 1;
-//     }
-//     return false;
-// };
-//
-// document.onkeyup = function (e) {
-//     var evt = e || window.event;
-//     if (evt.keyCode == 38 || evt.keyCode == 40) {
-//         keyState = 0;
-//     }
-//     return false;
-// };
+document.onkeydown = function (e) {
+    var evt = e || window.event;
+    if (evt.keyCode == 87 && document.querySelector('#hPaddle')) {
+      //'w' key
+        keyState = -1;
+    } else if (evt.keyCode == 90) {
+    //'z'
+        keyState = 1;
+    }
+    return false;
+};
+
+document.onkeyup = function (e) {
+    var evt = e || window.event;
+    if (evt.keyCode == 38 || evt.keyCode == 40) {
+        keyState = 0;
+    }
+    return false;
+};
 //////////////////////////////////////////////////////
 
 
