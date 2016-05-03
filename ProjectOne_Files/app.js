@@ -36,7 +36,7 @@ var ballSize = 40;
 var ballXPos = (fieldWidth / 2.1);
 var ballYPos = Math.floor((fieldHeight - ballSize) / 2);
 var ballXSpeed = Math.floor(Math.random() * 3) + 1;
-var ballYSpeed = 2;
+var ballYSpeed = 8;
 var ballColor = document.querySelector("#ball");
 
 var keyState = 0;
