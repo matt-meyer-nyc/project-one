@@ -193,7 +193,7 @@ document.onkeydown = function (e) {
 
 document.onkeyup = function (e) {
     var evt = e || window.event;
-    if (evt.keyCode == 38 || evt.keyCode == 40) {
+    if (evt.keyCode == 87 || evt.keyCode == 90) {
         keyState = 0;
     }
     return false;
